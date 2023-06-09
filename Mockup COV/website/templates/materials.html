@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Companies{% endblock %} {% block content%}
+<style>
+    table, th, td {
+        border:0px solid black;
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+</style>
+<div>
+    <form method="POST">
+        <h3 align="center">Materialen</h3>
+        <div class="form-group">
+          <input
+            type="name"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Search"
+          />
+        </div>
+      </form>
+    <table>
+        <tr>
+            <th>Materiaal</th>
+            <th>Type</th>
+            <th>Hoeveelheid</th>
+            <th>Locatie</th>
+            <th>Bedrijf</th>
+        </tr>
+        {% for material in materials %}
+        <tr>
+            <td><b>{{material[0]}}</b></td> 
+            <td>{{material[1]}}</td> 
+            <td>{{material[2]}}</td>
+            <td>{{material[3]}}</td>
+            <td>{{material[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

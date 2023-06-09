@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Casestudy's{% endblock %} {% block content%}
+<style>
+    select {border-radius: 30px;}
+</style>
+<div>
+    <form method="POST">
+        <h3 align="center">Casestudy's</h3>
+        <div class="form-group">
+          <input
+            type="name"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Search"
+          />
+        </div>
+      </form>
+    <ul class="list-group list-group-flush" id="companies">
+        {% for company in companies %}
+            <a class="list-group-item" href={{company[2]}}><b>{{company[0]}}</b> {{company[1]}} {{company[3]}}</a>
+        {% endfor %}
+    </ul>
+    <h2>Sorteer op:</h2>
+    <select>
+        <option>Meest relevant</option>
+        <option>Meest populair</option>
+        <option>Meest Recent</option>
+    </select>
+</div>
+{% endblock %}
